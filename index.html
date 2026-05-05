@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ice Cream Paradise</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI';
+            display: flex;
+            background: url('https://minticecreams.com/wp-content/uploads/2024/09/ice6.jpg') no-repeat fixed;
+            background-size: cover;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 230px;
+            height: 100vh;
+            background: #ff4d6d;
+            color: white;
+            position: fixed;
+            padding-top: 20px;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 12px;
+            text-decoration: none;
+        }
+
+        .sidebar a:hover {
+            background: #ff758f;
+        }
+
+        /* Main */
+        .main {
+            margin-left: 230px;
+            width: 100%;
+            background: rgba(255,255,255,0.9);
+        }
+
+        /* Hero */
+        .hero {
+            height: 60vh;
+            background: url('https://thumbs.dreamstime.com/b/summer-ice-cream-background-design-perfect-promotions-dessert-menus-party-invitations-sweet-treat-advertisements-colorful-385278898.jpg') no-repeat center;
+            background-size: cover;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-size: 28px;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #ff4d6d;
+        }
+
+        /* SLIDER */
+        .slider {
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .slides {
+            display: flex;
+            width: 400%;
+            animation: slide 12s infinite;
+        }
+
+        .slide {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        @keyframes slide {
+            0% { margin-left: 0; }
+            25% { margin-left: -100%; }
+            50% { margin-left: -200%; }
+            75% { margin-left: -300%; }
+            100% { margin-left: 0; }
+        }
+
+        /* MENU GRID */
+        .menu-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        /* BIG FLIP CARDS */
+        .flip-card {
+            width: 100%;
+            height: 400px;
+            perspective: 1000px;
+        }
+
+        .flip-inner {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+
+        .flip-card:hover .flip-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-front, .flip-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            backface-visibility: hidden;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .flip-front img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .flip-front h3 {
+            font-size: 24px;
+            margin: 10px;
+        }
+
+        .flip-back {
+            background: #ff4d6d;
+            color: white;
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+        }
+
+        button {
+            background: white;
+            color: #ff4d6d;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        /* Contact */
+        .contact-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .contact-container form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 350px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        footer {
+            background: #ff4d6d;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>🍦 Ice Cream</h2>
+    <a href="#home">Home</a>
+    <a href="#slider">Gallery</a>
+    <a href="#menu">Menu</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+</div>
+
+<div class="main">
+
+<div class="hero" id="home">
+    <h1>Ice Cream Paradise</h1>
+    <p>Sweet • Cold • Delicious</p>
+</div>
+
+<section id="slider">
+    <h2>Our Specials</h2>
+    <div class="slider">
+        <div class="slides">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2omd_565valcMQo3vxS6jmFfjzM5GGKHMfA&s" class="slide">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/068/151/038/small/delicious-assorted-ice-cream-scoops-with-toppings-in-metal-tray-photo.jpg" class="slide">
+            <img src="https://t3.ftcdn.net/jpg/01/76/33/14/360_F_176331484_nLHY9EoW0ETwPZaS9OBXPGbCJhT70GZe.jpg" class="slide">
+            <img src="https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL3NodXR0ZXJzdG9jay0yNDgwOTg5NTk5LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6ODI4fX19" class="slide">
+	     <img src="https://media.cnn.com/api/v1/images/stellar/prod/200416163203-03b-ice-cream-around-the-world-restricted.jpg?q=w_3000,h_1688,x_0,y_0,c_fill" class="slide">
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>
+At <b>Ice Cream Paradise</b>, we don’t just serve ice cream — we create moments of happiness. 🍨  
+Every scoop tells a story, blending rich flavors, smooth textures, and a touch of imagination to deliver a delightful experience.
+
+Inspired by creativity and crafted with care, our ice creams go beyond the ordinary. From timeless classics to bold new combinations, we experiment with flavors that excite your taste buds and leave you wanting more.
+
+We believe ice cream is not just a dessert, but a feeling — a celebration of joy, togetherness, and sweet memories.  
+Whether it’s your first visit or your hundredth, Ice Cream Paradise is where every visit becomes a treat to remember.
+
+✨ Taste the joy. Experience the magic. ✨
+</p>
+</section>
+
+<section id="menu">
+    <h2>Our Menu</h2>
+
+    <div class="menu-container">
+
+        <div class="flip-card">
+            <div class="flip-inner">
+                <div class="flip-front">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOiLdp08PHtnaDNDqgn59WDFvEMPf7PZhrbw&s">
+                    <h3>Chocolate</h3>
+                </div>
+                <div class="flip-back">
+                    <p>Rich creamy chocolate</p>
+                    <button>Order</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-inner">
+                <div class="flip-front">
+                    <img src="https://thumbs.dreamstime.com/b/delicious-strawberry-ice-cream-cone-surrounded-fresh-strawberries-pink-bokeh-361434198.jpg">
+                    <h3>Strawberry</h3>
+                </div>
+                <div class="flip-back">
+                    <p>Fresh fruity flavor</p>
+                    <button>Order</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-inner">
+                <div class="flip-front">
+                    <img src="https://thumbs.dreamstime.com/b/creamy-delight-vanilla-ice-cream-scoop-milk-splash-white-chocolate-truffles-around-visually-stunning-shot-amidst-400922148.jpg">
+                    <h3>Vanilla</h3>
+                </div>
+                <div class="flip-back">
+                    <p>Classic smooth taste</p>
+                    <button>Order</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+
+    <div class="contact-container">
+        <form>
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <button>Send</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+&copy; 2026 Ice Cream Paradise
+</footer>
+
+</div>
+<script>
+
+// Smooth scrolling for sidebar links
+document.querySelectorAll('.sidebar a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
+    });
+});
+
+// Order button interaction
+document.querySelectorAll('.flip-back button').forEach(button => {
+    button.addEventListener('click', function() {
+        const item = this.closest('.flip-card').querySelector('h3').innerText;
+        alert("🍦 You selected: " + item + " ice cream!");
+    });
+});
+
+// Contact form validation
+const form = document.querySelector('form');
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = form.querySelector('input[type="text"]').value.trim();
+    const email = form.querySelector('input[type="email"]').value.trim();
+    const message = form.querySelector('textarea').value.trim();
+
+    if(name === "" || email === "" || message === "") {
+        alert("⚠️ Please fill all fields!");
+        return;
+    }
+
+    if(!email.includes("@")) {
+        alert("⚠️ Enter a valid email!");
+        return;
+    }
+
+    alert("✅ Thank you " + name + "! Your message has been sent.");
+    form.reset();
+});
+
+// Hero text animation (auto changing tagline)
+const taglines = [
+    "Sweet • Cold • Delicious",
+    "Taste Happiness 🍨",
+    "Scoops of Joy 😋",
+    "Chill with Flavors ❄️"
+];
+
+let index = 0;
+const taglineElement = document.querySelector('.hero p');
+
+setInterval(() => {
+    index = (index + 1) % taglines.length;
+    taglineElement.textContent = taglines[index];
+}, 3000);
+
+// Hover sound effect (optional fun)
+document.querySelectorAll('.flip-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        console.log("Hovering ice cream 🍦");
+    });
+});
+
+</script>
+
+</body>
+</html>
